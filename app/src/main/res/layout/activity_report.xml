@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_indigo"
+    tools:context=".ReportActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textColor="@color/orange"
+            android:textSize="40sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="85" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvScore"
+            app:layout_constraintLeft_toRightOf="@id/tvScore" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수면 효율"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/sub_text_size"
+            app:layout_constraintLeft_toLeftOf="@id/tvScore"
+            app:layout_constraintTop_toBottomOf="@id/tvScore" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTimeInBed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toRightOf="@id/clScore"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTimeInBed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/main_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="8시간 14분" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="침대에서 보낸 시간"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/sub_text_size"
+            app:layout_constraintLeft_toLeftOf="@id/tvTimeInBed"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeInBed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSleepTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toRightOf="@id/clScore"
+        app:layout_constraintTop_toBottomOf="@+id/clTimeInBed">
+
+        <TextView
+            android:id="@+id/tvSleepTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/main_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="6시간 58분" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수면 시간"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/sub_text_size"
+            app:layout_constraintLeft_toLeftOf="@id/tvSleepTime"
+            app:layout_constraintTop_toBottomOf="@id/tvSleepTime" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clSleepTime" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_margin="20dp"
+        android:id="@+id/sleepLineChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        android:backgroundTint="@color/dark_indigo"/>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@id/sleepLineChart" />
+
+
+    <ImageView
+        android:id="@+id/iv_BI"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_bed_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+    <TextView
+        android:id="@+id/tv_BI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintLeft_toRightOf="@id/iv_BI"
+        app:layout_constraintTop_toTopOf="@id/iv_BI"
+        android:text="46" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="mins"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sub_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_BI"
+        app:layout_constraintLeft_toRightOf="@id/tv_BI" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="잠들기까지 걸린 시간"
+        android:textColor="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="@id/tv_BI"
+        app:layout_constraintTop_toBottomOf="@id/tv_BI" />
+
+
+    <ImageView
+        android:id="@+id/iv_moon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_nights_stay_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_BI" />
+
+    <TextView
+        android:id="@+id/tv_bed_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintLeft_toRightOf="@id/iv_moon"
+        app:layout_constraintTop_toTopOf="@id/iv_moon"
+        android:text="23:05" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취침 시간"
+        android:textColor="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="@id/tv_bed_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_bed_time" />
+
+
+    <ImageView
+        android:id="@+id/iv_alarm"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_alarm_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_moon" />
+
+    <TextView
+        android:id="@+id/tv_wake_up_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintLeft_toRightOf="@id/iv_alarm"
+        app:layout_constraintTop_toTopOf="@id/iv_alarm"
+        android:text="07:20" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기상 시간"
+        android:textColor="@color/light_gray"
+        app:layout_constraintLeft_toLeftOf="@id/tv_wake_up_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_wake_up_time" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintBottom_toTopOf="@id/flBottomNavigationBar" />
+
+    <FrameLayout
+        android:id="@+id/flBottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dark_indigo"
+            android:elevation="2dp"
+            app:itemIconSize="22dp"
+            app:itemIconTint="@color/light_gray"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/item_menu" />
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
