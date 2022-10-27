@@ -36,15 +36,20 @@ class ReportActivity : AppCompatActivity() {
             values.add(Entry(i.toFloat(), value))
         }
 
-        val set1 = LineDataSet(values, "DataSet1")
+        val set1 = LineDataSet(values, "Sleep Chart")
 
         val dataSets:ArrayList<ILineDataSet> = ArrayList()
         dataSets.add(set1)
 
         val data : LineData = LineData(dataSets)
 
-        set1.setColor(Color.CYAN)
-        set1.setCircleColor(Color.YELLOW)
+        chart?.legend?.textColor = Color.parseColor("#FCA311")
+        chart?.xAxis?.textColor = Color.parseColor("#E5E5E5")
+        chart?.axisLeft?.textColor = Color.parseColor("#E5E5E5")
+        chart?.axisRight?.textColor = Color.parseColor("#14213D")
+
+        set1.setColor(Color.parseColor("#FCA311"))
+        set1.setCircleColor(Color.parseColor("#FCA311"))
         set1.setDrawCircles(false)
         set1.setDrawValues(false)
 
