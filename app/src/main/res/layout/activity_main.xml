@@ -6,14 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/hello"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_report"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@id/btn_calendar"
+        android:text="Go to Report page"
+        />
+
+    <Button
+        android:id="@+id/btn_calendar"
+        app:layout_constraintTop_toBottomOf="@id/btn_report"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Calendar page"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
