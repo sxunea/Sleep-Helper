@@ -168,7 +168,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/settings_imagebutton"
         android:layout_width="31dp"
         android:layout_height="31dp"
         android:layout_marginTop="15dp"
@@ -178,7 +178,7 @@
         app:srcCompat="@drawable/ic_baseline_settings_24" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/back_imagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
