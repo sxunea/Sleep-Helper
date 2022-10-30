@@ -1,9 +1,6 @@
 package com.example.sleephelper
 
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.applandeo.materialcalendarview.CalendarView
 import com.applandeo.materialcalendarview.EventDay
@@ -26,7 +23,7 @@ class CalendarActivity : AppCompatActivity() {
 
 
         val calendar: Calendar = Calendar.getInstance()
-        events.add(EventDay(calendar, R.drawable.img))
+        events.add(EventDay(calendar, R.drawable.emoji_good))
 
 
         val calendarView: CalendarView = binding.calendarView as CalendarView
