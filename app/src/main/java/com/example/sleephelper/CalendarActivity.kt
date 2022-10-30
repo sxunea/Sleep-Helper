@@ -1,6 +1,5 @@
 package com.example.sleephelper
 
-import android.R
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -24,12 +23,11 @@ class CalendarActivity : AppCompatActivity() {
 
         val events: MutableList<EventDay> = ArrayList()
 
+
+
         val calendar: Calendar = Calendar.getInstance()
-        events.add(EventDay(calendar, R.drawable.ic_delete))
-//or
-//or
-//or if you want to specify event label color
-//or if you want to specify event label color
+        events.add(EventDay(calendar, R.drawable.img))
+
 
         val calendarView: CalendarView = binding.calendarView as CalendarView
         calendarView.setEvents(events)
