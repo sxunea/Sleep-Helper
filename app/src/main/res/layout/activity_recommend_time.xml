@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_indigo"
     tools:context=".RecommendTimeActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -39,7 +40,7 @@
                     android:layout_marginBottom="30dp"
                     android:text="00시 00분"
                     android:textAlignment="center"
-                    android:textColor="#FFEB3B"
+                    android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
                 android:text="다음날 기상시간 입력:"
-                android:textColor="#151515"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,11 +76,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="30dp"
-                android:text="00월 00일\nname님의 권장 수면 취침시간입니다."
+                android:text="name님의 권장 수면 취침시간입니다."
                 android:textAlignment="viewStart"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +94,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
                 android:text="00시 00분"
-                android:textColor="#0A46E3"
+                android:textColor="@color/orange"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -105,7 +106,6 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="70dp"
                 android:layout_marginEnd="30dp"
-                android:background="@drawable/layout_round"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -130,6 +130,17 @@
                         android:textColor="#F8F5F5" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0월 0일"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="71dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

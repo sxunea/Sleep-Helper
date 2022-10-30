@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_indigo"
     tools:context=".WritingDiaryActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -44,7 +45,7 @@
                     android:layout_marginEnd="30dp"
                     android:text="00월 00일 수면일기"
                     android:textAlignment="center"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +59,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="50dp"
                     android:text="수면 컨디션 : "
-                    android:textColor="#070707"
+                    android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -66,20 +67,20 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="47dp"
-                    android:layout_height="48dp"
+                    android:layout_width="38dp"
+                    android:layout_height="36dp"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="42dp"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
                     app:layout_constraintTop_toBottomOf="@+id/dateTextView"
-                    app:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
+                    app:srcCompat="@drawable/emoji_good" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="0dp"
                     android:layout_height="300dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/layout_round"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -121,9 +122,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="0시간 0분"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -149,9 +148,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="0시 0분"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -177,9 +174,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="0시 0분"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -205,9 +200,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="0번"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -259,9 +252,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="아이스 아메리카노1잔"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -287,9 +278,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="맥주한캔"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -315,9 +304,7 @@
                                 android:ems="10"
                                 android:inputType="textPersonName"
                                 android:text="0시간 0분"
-                                android:textColor="#0A46E3"
-                                android:textColorHint="#0A46E3"
-                                android:textColorLink="#0A46E3" />
+                                android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -330,7 +317,8 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="40dp"
-                    android:background="@drawable/button2_round"
+                    android:background="@drawable/layout_round"
+                    android:backgroundTint="#FF9800"
                     android:lineSpacingExtra="7sp"
                     android:text="완료"
                     android:textColor="#ffffff"

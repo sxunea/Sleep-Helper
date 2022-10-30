@@ -24,5 +24,20 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnMypage.setOnClickListener {
+            intent = Intent(this, MypageActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnRecommendTime.setOnClickListener {
+            intent = Intent(this, RecommendTimeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnWritingDiary.setOnClickListener {
+            intent = Intent(this, WritingDiaryActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
