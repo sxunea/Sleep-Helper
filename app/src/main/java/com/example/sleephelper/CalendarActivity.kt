@@ -1,5 +1,6 @@
 package com.example.sleephelper
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.applandeo.materialcalendarview.CalendarView
@@ -18,6 +19,40 @@ class CalendarActivity : AppCompatActivity() {
         binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setCalendar()
+
+        setBottomNavigation()
+        setFabAdd()
+    }
+
+    private fun setFabAdd(){
+        binding!!.fabAdd.setOnClickListener(){
+            intent = Intent(this, WritingDiaryActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun setBottomNavigation(){
+        binding!!.bottomNavigation.setOnItemSelectedListener(){
+            when(it.itemId){
+                R.id.nav_report -> {
+                    intent = Intent(this, ReportActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_alarm -> {
+                    intent = Intent(this, RecommendTimeActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_myPage -> {
+                    intent = Intent(this, MypageActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+    }
+
+    private fun setCalendar(){
         val events: MutableList<EventDay> = ArrayList()
 
 
@@ -28,7 +63,5 @@ class CalendarActivity : AppCompatActivity() {
 
         val calendarView: CalendarView = binding.calendarView as CalendarView
         calendarView.setEvents(events)
-
-
     }
 }
