@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        a
+
         binding.btnJoin.setOnClickListener(){
             intent = Intent(this, Join::class.java)
             startActivity(intent)
