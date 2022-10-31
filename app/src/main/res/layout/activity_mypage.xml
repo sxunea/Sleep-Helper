@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="21dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_marginTop="5dp"
             android:background="@drawable/textview_design1"
             android:gravity="center_vertical"
             android:lineSpacingExtra="6sp"
@@ -49,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_marginTop="5dp"
             android:background="@drawable/textview_design1"
             android:gravity="center_vertical"
             android:lineSpacingExtra="6sp"
@@ -79,58 +81,6 @@
             android:textSize="16sp"
             android:textStyle="normal" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="115dp"
-        android:text="평균수면시간"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email_linearLayout" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
-        android:layout_marginEnd="70dp"
-        android:text="수면LEVEL"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email_linearLayout" />
-
-    <Button
-        android:id="@+id/sleeptime_button"
-        android:layout_width="142dp"
-        android:layout_height="147dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/orange"
-        android:text="0시간 0분"
-        app:cornerRadius="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
-        android:id="@+id/sleeplevel_button"
-        android:layout_width="142dp"
-        android:layout_height="147dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/orange"
-        android:text="LV.2"
-        app:cornerRadius="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/cdl_bottom"
@@ -170,24 +120,82 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <ImageView
-        android:id="@+id/settings_imagebutton"
-        android:layout_width="31dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#F1F1F1"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_settings_24" />
-
-    <ImageView
-        android:id="@+id/back_imagebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        app:layout_constraintTop_toBottomOf="@+id/Email_linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <TextView
+            android:id="@+id/ModifyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:text="프로필 수정"
+            android:textColor="#FBFBFB"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/ModifyimageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="3"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/LogoutTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:text="계정 Logout"
+            android:textColor="#FBFBFB"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/LogoutimageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="3"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
