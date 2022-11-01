@@ -7,14 +7,14 @@
     android:background="@color/dark_indigo"
     tools:context=".WritingDiaryActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
+    <ScrollView
+        android:id="@+id/ScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/checkButton"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -120,8 +120,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:ems="10"
+                                android:hint="0시간 0분"
                                 android:inputType="textPersonName"
-                                android:text="0시간 0분"
                                 android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
@@ -146,8 +146,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:ems="10"
+                                android:hint="0시 0분"
                                 android:inputType="textPersonName"
-                                android:text="0시 0분"
                                 android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
@@ -172,8 +172,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:ems="10"
+                                android:hint="0시 0분"
                                 android:inputType="textPersonName"
-                                android:text="0시 0분"
                                 android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
@@ -198,8 +198,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:ems="10"
+                                android:hint="0번"
                                 android:inputType="textPersonName"
-                                android:text="0번"
                                 android:textColor="@color/dark_indigo" />
                         </LinearLayout>
 
@@ -208,7 +208,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_height="250dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
@@ -236,62 +236,10 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/coffeetextview"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="섭취 커피량 :"
-                                android:textColor="#F4F4F4"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/coffeeEdittextView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="아이스 아메리카노1잔"
-                                android:textColor="@color/dark_indigo" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/alcoholtextview"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="섭취 알코올량 :"
-                                android:textColor="#F4F4F4"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/alcoholEdittextView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="맥주한캔"
-                                android:textColor="@color/dark_indigo" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:orientation="horizontal">
-
-                            <TextView
                                 android:id="@+id/afternoonsleeptextview"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="낮잠시간 :"
+                                android:text="낮잠시간 "
                                 android:textColor="#F4F4F4"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -302,10 +250,799 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:ems="10"
+                                android:hint="0시간 0분"
                                 android:inputType="textPersonName"
-                                android:text="0시간 0분"
                                 android:textColor="@color/dark_indigo" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/coffeetextview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="섭취 커피량 "
+                                android:textColor="#F4F4F4"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee0_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee0_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="0잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee1_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee1_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="1잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee2_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee2_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="2잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee3_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee3_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="3잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee4_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee4_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="4잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/coffee5_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/coffee" />
+
+                                    <TextView
+                                        android:id="@+id/coffee5_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="5잔↑"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@color/dark_indigo"
+                            android:text="TextView"
+                            android:textColor="#1C1C1C" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/beer_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="섭취 맥주량"
+                                android:textColor="#F4F4F4"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer0_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer0_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="0잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer1_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer1_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="1잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer2_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer2_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="2잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer3_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer3_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="3잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer4_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer4_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="4잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/beer5_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/beer" />
+
+                                    <TextView
+                                        android:id="@+id/beer5_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="5잔↑"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@color/dark_indigo"
+                            android:text="TextView"
+                            android:textColor="#1C1C1C" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/soju_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="섭취 소주량"
+                                android:textColor="#F4F4F4"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju0_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju0_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="0잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju1_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju1_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="1잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju2_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju2_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="2잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju3_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju3_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="3잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju4_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju4_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="4잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/soju5_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/soju" />
+
+                                    <TextView
+                                        android:id="@+id/soju5_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="5잔↑"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:text="TextView"
+                            android:textColor="#1C1C1C"
+                            android:background="@color/dark_indigo" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/makgurli_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="섭취 탁주량"
+                                android:textColor="#F4F4F4"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli0_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli0_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="0잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli1_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli1_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="1잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli2_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli2_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="2잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli3_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli3_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="3잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli4_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli4_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="4잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/makgurli5_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/makgurli" />
+
+                                    <TextView
+                                        android:id="@+id/makgurli5_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="5잔↑"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:background="@color/dark_indigo"
+                            android:text="TextView"
+                            android:textColor="#1C1C1C" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="100dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/wine_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="섭취 와인량"
+                                android:textColor="#F4F4F4"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine0_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine0_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="0잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine1_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine1_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="1잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine2_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine2_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="2잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine3_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine3_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="3잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine4_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine4_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="4잔"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/wine5_img"
+                                        android:layout_width="40dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginLeft="2dp"
+                                        app:srcCompat="@drawable/wine" />
+
+                                    <TextView
+                                        android:id="@+id/wine5_text"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="5잔↑"
+                                        android:textColor="#000000" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -332,6 +1069,5 @@
                 </Button>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
