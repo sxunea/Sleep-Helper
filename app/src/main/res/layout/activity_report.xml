@@ -30,17 +30,16 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_daily"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@null"
+                    android:layout_height="match_parent"
                     android:background="@drawable/report_left_button_background"
+                    android:backgroundTint="@color/orange"
                     android:text="일간"
-                    android:textColor="@color/dark_indigo"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_weekly"

@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.sleephelper.databinding.ActivityReportBinding
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.YAxis
@@ -32,6 +33,7 @@ class ReportActivity : AppCompatActivity(), View.OnClickListener {
         setBottomNavigation()
 
         setFabAdd()
+
     }
 
     private fun setFabAdd(){
@@ -93,6 +95,5 @@ class ReportActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-
     }
 }
