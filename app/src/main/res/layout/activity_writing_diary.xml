@@ -88,6 +88,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:text="< 갤럭시 워치에서 받아온 정보 >"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -275,6 +285,16 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:text="< 해당사항만 입력해주세요 >"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
