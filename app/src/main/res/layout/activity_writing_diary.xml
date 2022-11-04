@@ -94,7 +94,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:gravity="center"
-                            android:text="< 갤럭시 워치에서 받아온 정보 >"
+                            android:text=" 갤럭시 워치에서 받아온 정보 "
                             android:textColor="#FFFFFF"
                             android:textSize="20sp" />
 
@@ -292,7 +292,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:gravity="center"
-                            android:text="< 해당사항만 입력해주세요 >"
+                            android:text=" 해당사항만 입력해주세요 "
                             android:textColor="#FFFFFF"
                             android:textSize="20sp" />
 
